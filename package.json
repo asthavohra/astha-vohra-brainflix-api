@@ -1,0 +1,8 @@
+{
+  "name": "astha-vohra-brainflix-api",
+  "version": "1.0.0",
+  "dependencies": {},
+  "scripts": {
+    "server": "node index.js"
+  }
+}
