@@ -1,13 +1,13 @@
+//index.js is the entry point
+//imported express to start the server
 const express = require("express");
+const videosRouter = require("./routes/videos");
+
 const app = express();
+const port = 8080;
+app.use(express.json());
+app.use("/videos/", videosRouter);
 
-const SERVER_PORT = 8080;
-
-app.listen(SERVER_PORT, () => {
-  console.log(`Listening for incoming request on port ${SERVER_PORT}`);
-});
-
-app.get("/videos", (request, response) => {
-  console.log("getting request");
-  response.send("Hello world");
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
 });
