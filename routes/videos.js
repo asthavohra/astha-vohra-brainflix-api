@@ -37,7 +37,7 @@ router.get("/:id", (request, response) => {
   );
 });
 
-router.post("/upload", (request, response) => {
+router.post("/", (request, response) => {
   console.log(request.body);
   const requestBody = request.body;
   const newVideo = {
@@ -55,7 +55,7 @@ router.post("/upload", (request, response) => {
       {
         id: uuidv4(),
         name: "Astha Vohra",
-        comment: "Very nice course",
+        comment: "Very nice course. Amazing Content",
         likes: 0,
         timestamp: new Date().getTime(),
       },
