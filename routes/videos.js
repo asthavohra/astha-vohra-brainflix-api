@@ -44,7 +44,7 @@ router.post("/", (request, response) => {
     id: uuidv4(),
     title: requestBody.title,
     channel: "BrainStation-WebDevs",
-    image: "",
+    image: "http://localhost:8080/images/Upload-video-preview.jpg",
     description: requestBody.description,
     views: "0",
     likes: "0",
