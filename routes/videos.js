@@ -88,9 +88,30 @@ router.post("/:id/comments", (request, response) => {
     JSON.stringify(videosData),
     (error) => {
       if (error) {
-        response.status(500).send({ error: "Unable to upload video" });
+        response.status(500).send({ error: "Unable to post comment" });
       }
       response.status(200).send(newComment);
+    }
+  );
+});
+
+router.delete("/:videoId/comments/:commentId", (request, response) => {
+  const { videoId, commentId } = request.params;
+  const video = videosData.find((video) => video.id === videoId);
+  const videoComments = video.comments;
+  const commentIndex = videoComments.findIndex(
+    (comment) => comment.id === commentId
+  );
+  const comment = videoComments[commentIndex];
+  videoComments.splice(commentIndex, 1);
+  filesystem.writeFile(
+    "./data/videos.json",
+    JSON.stringify(videosData),
+    (error) => {
+      if (error) {
+        response.status(500).send({ error: "Unable to delete comment" });
+      }
+      response.status(200).send(comment);
     }
   );
 });
