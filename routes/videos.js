@@ -115,4 +115,5 @@ router.delete("/:videoId/comments/:commentId", (request, response) => {
     }
   );
 });
+
 module.exports = router;
