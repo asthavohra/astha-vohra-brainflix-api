@@ -43,7 +43,7 @@ router.post("/", (request, response) => {
     views: "0",
     likes: "0",
     duration: "04:00",
-    video: "",
+    video: "https://project-2-api.herokuapp.com/stream",
     timestamp: new Date().getTime(),
     comments: [
       {
